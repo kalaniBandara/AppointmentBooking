@@ -33,16 +33,16 @@ function App() {
   return (
     <>
       <section>
-        <div className="flex flex-col items-start justify-start bg-[#a8a3a3]  p-5 gap-5">
+        <div className="flex flex-col items-start justify-start bg-[#D2AF86] p-5 gap-5">
           <p>Location</p>
           <div className="w-full h-10 border-spacing-1 bg-[#fff]"></div>
 
-          <div className="w-full h-10 border-spacing-1 bg-[#fff] flex flex-row items-center justify-center gap-8">
+          <div className="w-full h-10 border-spacing-1 bg-[#fff] flex flex-row items-center justify-center gap-8 py-1">
             <div className="basis-1/2">
-              <label for="book-type">
+              <label for="book-type" class="pr-5">
                 I would like to book an appointment for:
               </label>
-              <select
+              <select class="border-solid border-2 border-black-600 rounded w-3/12 pl-2 py-1"
                 name="book-type"
                 id="book-type"
                 value={selectedOption}
@@ -78,7 +78,7 @@ function App() {
                         className={({ selected }) =>
                           classNames(
                             "w-full rounded-lg py-2.5 text-sm font-medium leading-5",
-                            "ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2",
+                            "ring-[#D2AF86]/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2",
                             selected
                               ? "bg-white text-blue-700 shadow"
                               : "text-blue-100 hover:bg-white/[0.12] hover:text-white"
@@ -98,7 +98,11 @@ function App() {
                           "ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
                         )}
                       >
-                        hello
+                        <form>
+                          <ul>
+                            Lahiru Bada
+                          </ul>
+                        </form>
                       </Tab.Panel>
                     ))}
                   </Tab.Panels>
