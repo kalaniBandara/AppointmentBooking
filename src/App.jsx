@@ -100,7 +100,106 @@ function App() {
     setshowSpecilssecOneFo(false)
     setshowSpecilssecOneFi(!showSpecilssecFi)
   }
-
+  // {
+  //   title: "",
+  //   des: "",
+  //   price: "",
+  //   time: ""
+  // },
+  const manicureLists = [
+    {
+      title: "Quickie Manicure",
+      des: "A no-nonsense shape and polish",
+      price: "18",
+      time: "30"
+    },
+    {
+      title: "Signature Manicure",
+      des: "Our classic service includes nail shaping, cuticle care and a massage. Finish off with a fresh coat of polish.",
+      price: "35",
+      time: "60"
+    },
+    {
+      title: "Polished + Zen Manicure",
+      des: "Our all-new “Polished + Zen” service includes everything you love about our Signature service plus a heated eye mask treatment, followed by an aromatherapy pause with Innerfyre’s healing balms, as you recline in your chair, sip on calming chamomile tea and tune into a guided meditation video. It’s the perfect moment where you can get relaxed and be in your own zone.",
+      price: "45",
+      time: "70"
+    },
+    {
+      title: "Luxe Spa Manicure",
+      des: "The full works. Our luxe service includes nail shaping, cuticle care, gentle sea salt exfoliation, organic clay masque and a coconut oil massage. Finish off with a fresh coat of polish.",
+      price: "70",
+      time: "70"
+    },
+    {
+      title: "Gel Polish Soak Off (Manicure)",
+      des: "Safely remove your gel polish (not for Hard Gel or Nail Extensions)",
+      price: "20",
+      time: "20"
+    },
+    {
+      title: "Little Miss Quickie Manicure",
+      des: "A mini manicure service for the little ones, aged 12 years and below only. *Includes four nail stickers.",
+      price: "15",
+      time: "20"
+    },
+    {
+      title: "Gentlemans Manicure",
+      des: "Our classic service just for men, includes nail shaping, cuticle care and a massage. Finish off with a buff shine.",
+      price: "40",
+      time: "60"
+    },
+  ];
+  const pedicureLists = [
+    {
+      title: "Quickie Pedicure",
+      des: "A no-nonsense shape and polish",
+      price: "18",
+      time: "30"
+    },
+    {
+      title: "Signature Pedicure",
+      des: "Our classic service includes nail shaping, cuticle care, foot scrub and a massage. Finish off with a fresh coat of polish.",
+      price: "35",
+      time: "60"
+    },
+    {
+      title: "Polished + Zen Pedicure",
+      des: "Our all-new “Polished + Zen” service includes everything you love about our Signature service plus a heated eye mask treatment, followed by an aromatherapy pause with Innerfyre’s healing balms, as you recline in your chair, sip on calming chamomile tea and tune into a guided meditation video. It’s the perfect moment where you can get relaxed and be in your own zone.",
+      price: "55",
+      time: "70"
+    },
+    {
+      title: "Gel Polish Soak Off (Pedicure)",
+      des: "Safely remove your gel polish (not for Hard Gel or Nail Extensions)",
+      price: "70",
+      time: "70"
+    },
+    {
+      title: "Little Miss Quickie Pedicure",
+      des: "A mini pedicure service for the little ones, aged 12 years and below only. *Includes four nail stickers.",
+      price: "20",
+      time: "20"
+    },
+    {
+      title: "Luxe Spa Pedicure",
+      des: "The full works. Our luxe service includes nail shaping, cuticle care, gentle sea salt exfoliation, organic clay masque and a coconut oil massage. Finish off with a fresh coat of polish. Also includes callus & heel treatment (if needed).",
+      price: "15",
+      time: "20"
+    },
+    {
+      title: "Gentlemans Pedicure",
+      des: "Our classic service just for men, includes nail shaping, cuticle care, foot scrub and a massage. Finish off with a buff shine.",
+      price: "40",
+      time: "60"
+    },
+    {
+      title: "Callus & Heel Treatment",
+      des: "A highly-effective foot scrub and treatment to remove thick and stubborn calluses (Not suitable for use if you are pregnant, diabetic or have poor circulation due to any illness.)",
+      price: "40",
+      time: "60"
+    },
+  ];
   return (
     <>
       <section>
@@ -321,7 +420,83 @@ function App() {
                   <li>Signature Pedicure</li>
                 </div>}
               </div>
-            </div>}
+            </div>
+          }
+          {manicure &&
+            <div className="w-full flex flex-col items-center justify-start">
+              <div
+                className="w-full flex flex-col"
+              >
+                {manicureLists.map((manicureList, index) => (
+                  <div className="w-full flex flex-row items-center justify-start border-[1px]" key={index}>
+                    <div className="w-5/6 flex flex-col items-start gap-3">
+                      <p>{manicureList.title}</p>
+                      <p>{manicureList.des}</p>
+                    </div>
+                    <div className="w-1/6 flex flex-col items-center justify-center">
+                      <p>USD {manicureList.price}</p>
+                      <p>{manicureList.time}</p>
+                    </div>
+                    <div className="w-20">
+                      <input type="radio" name="manicureListValue" id="manicureListValue"  />
+                    </div>
+                  </div>
+                ))}
+
+
+              </div>
+            </div>
+          }
+          {pedicure &&
+            <div className="w-full flex flex-col items-center justify-start">
+              <div
+                className="w-full flex flex-col"
+              >
+                {pedicureLists.map((pedicureList, index) => (
+                  <div className="w-full flex flex-row items-center justify-start border-[1px]" key={index}>
+                    <div className="w-5/6 flex flex-col items-start gap-3">
+                      <p>{pedicureList.title}</p>
+                      <p>{pedicureList.des}</p>
+                    </div>
+                    <div className="w-1/6 flex flex-col items-center justify-center">
+                      <p>USD {pedicureList.price}</p>
+                      <p>{pedicureList.time} Min</p>
+                    </div>
+                    <div className="w-20">
+                      <input type="radio" name="manicureListValue" id="manicureListValue"  />
+                    </div>
+                  </div>
+                ))}
+
+
+              </div>
+            </div>
+          }
+          {massage &&
+            <div className="w-full flex flex-col items-center justify-start">
+              <div
+                className="w-full flex flex-col"
+              >
+                
+                  <div className="w-full flex flex-row items-center justify-start border-[1px]" >
+                    <div className="w-5/6 flex flex-col items-start gap-3">
+                      <p>30-min Foot Massage</p>
+                      <p>Soothe tired feet with a warm foot soak, gentle exfoliation and an invigorating foot and calf massage using organic coconut oil and essential oils.</p>
+                    </div>
+                    <div className="w-1/6 flex flex-col items-center justify-center">
+                      <p>USD 45</p>
+                      <p>30 Min</p>
+                    </div>
+                    <div className="w-20">
+                      <input type="radio" name="manicureListValue" id="manicureListValue"  />
+                    </div>
+                  </div>
+              
+
+
+              </div>
+            </div>
+          }
         </div>
       </section>
     </>
