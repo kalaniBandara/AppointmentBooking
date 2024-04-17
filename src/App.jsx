@@ -13,11 +13,15 @@ function App() {
   const [manicure, setmanicure] = useState(false)
   const [pedicure, setpedicure] = useState(false)
   const [massage, setmassage] = useState(false)
+  const [buttonShow, setbuttonShow] = useState(false)
   const [showSpecilssecOne, setshowSpecilssecOne] = useState(false)
   const [showSpecilssecTwo, setshowSpecilssecOneTwo] = useState(false)
   const [showSpecilssecThr, setshowSpecilssecOneThr] = useState(false)
   const [showSpecilssecFo, setshowSpecilssecOneFo] = useState(false)
   const [showSpecilssecFi, setshowSpecilssecOneFi] = useState(false)
+  const [manicureValue, setmanicureValue] = useState("");
+  const [pedicureValue, setpedicureValue] = useState("");
+  const [massValue, setmassValue] = useState("");
   // Function to handle change in the select element
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
@@ -438,7 +442,7 @@ function App() {
                       <p>{manicureList.time}</p>
                     </div>
                     <div className="w-20">
-                      <input type="radio" name="manicureListValue" id="manicureListValue"  />
+                      <input type="radio" name="manicureListValue" id="manicureListValue" onClick={() => setbuttonShow(!buttonShow)}/>
                     </div>
                   </div>
                 ))}
@@ -463,7 +467,7 @@ function App() {
                       <p>{pedicureList.time} Min</p>
                     </div>
                     <div className="w-20">
-                      <input type="radio" name="manicureListValue" id="manicureListValue"  />
+                      <input type="radio" name="manicureListValue" id="manicureListValue"  onClick={() => setbuttonShow(!buttonShow)}/>
                     </div>
                   </div>
                 ))}
@@ -477,26 +481,39 @@ function App() {
               <div
                 className="w-full flex flex-col"
               >
-                
-                  <div className="w-full flex flex-row items-center justify-start border-[1px]" >
-                    <div className="w-5/6 flex flex-col items-start gap-3">
-                      <p>30-min Foot Massage</p>
-                      <p>Soothe tired feet with a warm foot soak, gentle exfoliation and an invigorating foot and calf massage using organic coconut oil and essential oils.</p>
-                    </div>
-                    <div className="w-1/6 flex flex-col items-center justify-center">
-                      <p>USD 45</p>
-                      <p>30 Min</p>
-                    </div>
-                    <div className="w-20">
-                      <input type="radio" name="manicureListValue" id="manicureListValue"  />
-                    </div>
+
+                <div className="w-full flex flex-row items-center justify-start border-[1px]" >
+                  <div className="w-5/6 flex flex-col items-start gap-3">
+                    <p>30-min Foot Massage</p>
+                    <p>Soothe tired feet with a warm foot soak, gentle exfoliation and an invigorating foot and calf massage using organic coconut oil and essential oils.</p>
                   </div>
-              
+                  <div className="w-1/6 flex flex-col items-center justify-center">
+                    <p>USD 45</p>
+                    <p>30 Min</p>
+                  </div>
+                  <div className="w-20">
+                    <input type="radio" name="manicureListValue" id="manicureListValue" onClick={() => setbuttonShow(!buttonShow)}/>
+                  </div>
+                </div>
+
 
 
               </div>
             </div>
           }
+          {
+            buttonShow && (
+              <>
+                <div className="w-full flex flex-row items-center justify-center">
+                  <button type="button" className="bg-[#fff] px-5 py-2 rounded-md">Save and Continue</button>
+                </div>
+                <div className="w-full flex flex-row items-end justify-end">
+                  <button type="button " className="bg-[#fff] px-5 py-2 rounded-md">Add Another Service</button>
+                </div>
+              </>
+            )
+          }
+
         </div>
       </section>
     </>
