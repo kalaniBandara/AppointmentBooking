@@ -206,12 +206,12 @@ function App() {
   ];
   return (
     <>
-      <section>
-        <div className="flex flex-col items-start justify-start bg-[#D2AF86] p-5 gap-5">
+      <section >
+        <div className="flex flex-col items-start justify-start bg-primary p-5 gap-5 rounded-2xl container">
           <p>Location</p>
-          <div className="w-full h-10 border-spacing-1 bg-[#fff]"></div>
+          <div className="w-full h-10 border-spacing-1 bg-white rounded-2xl"></div>
 
-          <div className="w-full h-10 border-spacing-1 bg-[#fff] flex flex-row items-center justify-center gap-8 py-1">
+          <div className="w-full h-10 border-spacing-1 bg-white flex flex-row items-center justify-center gap-8 py-10 rounded-2xl">
             <div className="basis-1/2">
               <label for="book-type" class="pr-5">
                 I would like to book an appointment for:
@@ -230,12 +230,12 @@ function App() {
             <div className="basis-1/2">
               {selectedOption == "2above" && (
                 <div className="flex flex-row items-center justify-center gap-5">
-                  <button onClick={DecrementFun}>-</button>
+                  <button onClick={DecrementFun} className="bg-primary text-2xl w-10 h-10 rounded-full hover:drop-shadow-lg hover:ring-2 hover:ring-primary hover:bg-white transition-all duration-300">-</button>
                   <p>{count}</p>
                   {count == 4 ? (
                     <></>
                   ) : (
-                    <button onClick={IncrementFun}>+</button>
+                    <button onClick={IncrementFun}  className="bg-primary text-2xl w-10 h-10 rounded-full hover:drop-shadow-lg hover:ring-2 hover:ring-primary hover:bg-white transition-all duration-300">+</button>
                   )}
                 </div>
               )}
@@ -286,36 +286,36 @@ function App() {
           )}
           {/* services */}
           <div className="w-full flex flex-col items-center justify-start">
-            <div className="w-full flex flex-row items-center justify-center">
+            <div className="w-full flex flex-row items-center justify-evenly gap-5">
               <div
-                className={`${specials ? "bg-white" : ""} w-1/4 h-14 cursor-pointer flex flex-col items-center justify-center border-[1px] uppercase`}
+                className={`${specials ? "bg-white" : ""} w-1/4 h-14 cursor-pointer flex flex-col items-center justify-center ring-2 ring-white uppercase rounded-2xl`}
                 onClick={Specials}
 
               >
                 Specials
               </div>
-              <div className={`${manicure ? "bg-white" : ""} w-1/4 h-14 cursor-pointer flex flex-col items-center justify-center border-[1px] uppercase`} onClick={Manicure} >
+              <div className={`${manicure ? "bg-white" : ""} w-1/4 h-14 cursor-pointer flex flex-col items-center justify-center ring-2 ring-white uppercase rounded-2xl`} onClick={Manicure} >
                 Manicure
               </div>
-              <div className={`${pedicure ? "bg-white" : ""} w-1/4 h-14 cursor-pointer flex flex-col items-center justify-center border-[1px] uppercase`} onClick={Pedicure} >
+              <div className={`${pedicure ? "bg-white" : ""} w-1/4 h-14 cursor-pointer flex flex-col items-center justify-center ring-2 ring-white uppercase rounded-2xl`} onClick={Pedicure} >
                 Pedicure
               </div>
-              <div className={`${massage ? "bg-white" : ""} w-1/4 h-14 cursor-pointer flex flex-col items-center justify-center border-[1px] uppercase`} onClick={Massage} >
+              <div className={`${massage ? "bg-white" : ""} w-1/4 h-14 cursor-pointer flex flex-col items-center justify-center ring-2 ring-white uppercase rounded-2xl`} onClick={Massage} >
                 Massage
               </div>
             </div>
           </div>
           {/* Specials Section */}
           {specials &&
-            <div className="w-full flex flex-col items-center justify-start">
+            <div className="w-full flex flex-col items-center justify-start rounded-lg p-1 gap-2">
               <div
-                className="w-full flex flex-col"
+                className="w-full flex flex-col ring-2 rounded-lg ring-gr p-2 hover:bg-white transition-all duration-300"
               >
-                <div className="w-full flex flex-row items-center justify-start border-[1px]">
+                <div className="w-full flex flex-row items-center justify-start ">
                   <div className="w-20"><div className="cursor-pointer" onClick={secOne}>Top</div></div>
                   <div className="w-5/6 flex flex-col items-start gap-3">
-                    <p>Signature Manicure & Pedicure Combo</p>
-                    <p>Book in for a Signature Manicure & Signature Pedicure at the same time, and enjoy a combo price of $75. T&C's apply</p>
+                    <p className="font-bold">Signature Manicure & Pedicure Combo</p>
+                    <p className="font-light">Book in for a Signature Manicure & Signature Pedicure at the same time, and enjoy a combo price of $75. T&C's apply</p>
                   </div>
                   <div className="w-1/6 flex flex-col items-center justify-center">
                     <p>75</p>
@@ -331,9 +331,9 @@ function App() {
                 </div>}
               </div>
               <div
-                className="w-full flex flex-col"
+                className="w-full flex flex-col ring-2 rounded-lg ring-gr p-2 hover:bg-white transition-all duration-300"
               >
-                <div className="w-full flex flex-row items-center justify-start border-[1px]">
+                <div className="w-full flex flex-row items-center justify-start ">
                   <div className="w-20"><div className="cursor-pointer" onClick={secTwo}>Top</div></div>
                   <div className="w-5/6 flex flex-col items-start gap-3">
                     <p>Luxe Spa Manicure & Pedicure Combo</p>
@@ -353,9 +353,9 @@ function App() {
                 </div>}
               </div>
               <div
-                className="w-full flex flex-col"
+                className="w-full flex flex-col ring-2 rounded-lg ring-gr p-2 hover:bg-white transition-all duration-300"
               >
-                <div className="w-full flex flex-row items-center justify-start border-[1px]">
+                <div className="w-full flex flex-row items-center justify-start ">
                   <div className="w-20"><div className="cursor-pointer" onClick={secTh}>Top</div></div>
                   <div className="w-5/6 flex flex-col items-start gap-3">
                     <p>Gentleman's Manicure & Pedicure Combo</p>
@@ -375,9 +375,9 @@ function App() {
                 </div>}
               </div>
               <div
-                className="w-full flex flex-col"
+                className="w-full flex flex-col ring-2 rounded-lg ring-gr p-2 hover:bg-white transition-all duration-300"
               >
-                <div className="w-full flex flex-row items-center justify-start border-[1px]">
+                <div className="w-full flex flex-row items-center justify-start ">
                   <div className="w-20"><div className="cursor-pointer" onClick={secFo}>Top</div></div>
                   <div className="w-5/6 flex flex-col items-start gap-3">
                     <p>SPArty Package for 5 pax</p>
@@ -399,9 +399,9 @@ function App() {
                 </div>}
               </div>
               <div
-                className="w-full flex flex-col"
+                className="w-full flex flex-col ring-2 rounded-lg ring-gr p-2 hover:bg-white transition-all duration-300 "
               >
-                <div className="w-full flex flex-row items-center justify-start border-[1px]">
+                <div className="w-full flex flex-row items-center justify-start ">
                   <div className="w-20"><div className="cursor-pointer" onClick={secFi}>Top</div></div>
                   <div className="w-5/6 flex flex-col items-start gap-3">
                     <p>Welcome Offer</p>
@@ -429,10 +429,10 @@ function App() {
           {manicure &&
             <div className="w-full flex flex-col items-center justify-start">
               <div
-                className="w-full flex flex-col"
+                className="w-full flex flex-col gap-2"
               >
                 {manicureLists.map((manicureList, index) => (
-                  <div className="w-full flex flex-row items-center justify-start border-[1px]" key={index}>
+                  <div className="w-full flex flex-row items-center justify-start ring-2 rounded-lg ring-gr p-2 hover:bg-white transition-all duration-300 " key={index}>
                     <div className="w-5/6 flex flex-col items-start gap-3">
                       <p>{manicureList.title}</p>
                       <p>{manicureList.des}</p>
@@ -454,10 +454,10 @@ function App() {
           {pedicure &&
             <div className="w-full flex flex-col items-center justify-start">
               <div
-                className="w-full flex flex-col"
+                className="w-full flex flex-col gap-2"
               >
                 {pedicureLists.map((pedicureList, index) => (
-                  <div className="w-full flex flex-row items-center justify-start border-[1px]" key={index}>
+                  <div className="w-full flex flex-row items-center justify-start ring-2 rounded-lg ring-gr p-2 hover:bg-white transition-all duration-300 hover:cursor-pointer" key={index}>
                     <div className="w-5/6 flex flex-col items-start gap-3">
                       <p>{pedicureList.title}</p>
                       <p>{pedicureList.des}</p>
@@ -479,10 +479,10 @@ function App() {
           {massage &&
             <div className="w-full flex flex-col items-center justify-start">
               <div
-                className="w-full flex flex-col"
+                className="w-full flex flex-col ring-2 rounded-lg ring-gr p-2 hover:bg-white transition-all duration-300 hover:cursor-pointer"
               >
 
-                <div className="w-full flex flex-row items-center justify-start border-[1px]" >
+                <div className="w-full flex flex-row items-center justify-start " >
                   <div className="w-5/6 flex flex-col items-start gap-3">
                     <p>30-min Foot Massage</p>
                     <p>Soothe tired feet with a warm foot soak, gentle exfoliation and an invigorating foot and calf massage using organic coconut oil and essential oils.</p>
