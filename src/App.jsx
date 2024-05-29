@@ -5,6 +5,10 @@
 import { useState } from "react";
 import { Tab } from "@headlessui/react";
 import "./App.css";
+import SpecialsTab from "./SpecialsTab";
+import ManicureTab from "./ManicureTab";
+import PedicureTab from "./PedicureTab";
+import MassageTab from "./MassageTab";
 
 function App() {
   const [count, setCount] = useState(2);
@@ -13,15 +17,11 @@ function App() {
   const [manicure, setmanicure] = useState(false)
   const [pedicure, setpedicure] = useState(false)
   const [massage, setmassage] = useState(false)
-  const [buttonShow, setbuttonShow] = useState(false)
-  const [showSpecilssecOne, setshowSpecilssecOne] = useState(false)
-  const [showSpecilssecTwo, setshowSpecilssecOneTwo] = useState(false)
-  const [showSpecilssecThr, setshowSpecilssecOneThr] = useState(false)
-  const [showSpecilssecFo, setshowSpecilssecOneFo] = useState(false)
-  const [showSpecilssecFi, setshowSpecilssecOneFi] = useState(false)
-  const [manicureValue, setmanicureValue] = useState("");
-  const [pedicureValue, setpedicureValue] = useState("");
-  const [massValue, setmassValue] = useState("");
+
+
+
+
+
   // Function to handle change in the select element
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
@@ -69,144 +69,21 @@ function App() {
     setmassage(true)
   }
 
-  function secOne() {
-    setshowSpecilssecOne(!showSpecilssecOne)
-    setshowSpecilssecOneTwo(false)
-    setshowSpecilssecOneThr(false)
-    setshowSpecilssecOneFo(false)
-    setshowSpecilssecOneFi(false)
-  }
-  function secTwo() {
-    setshowSpecilssecOne(false)
-    setshowSpecilssecOneTwo(!showSpecilssecTwo)
-    setshowSpecilssecOneThr(false)
-    setshowSpecilssecOneFo(false)
-    setshowSpecilssecOneFi(false)
-  }
-  function secTh() {
-    setshowSpecilssecOne(false)
-    setshowSpecilssecOneTwo(false)
-    setshowSpecilssecOneThr(!showSpecilssecThr)
-    setshowSpecilssecOneFo(false)
-    setshowSpecilssecOneFi(false)
-  }
-  function secFo() {
-    setshowSpecilssecOne(false)
-    setshowSpecilssecOneTwo(false)
-    setshowSpecilssecOneThr(false)
-    setshowSpecilssecOneFo(!showSpecilssecFo)
-    setshowSpecilssecOneFi(false)
-  }
-  function secFi() {
-    setshowSpecilssecOne(false)
-    setshowSpecilssecOneTwo(false)
-    setshowSpecilssecOneThr(false)
-    setshowSpecilssecOneFo(false)
-    setshowSpecilssecOneFi(!showSpecilssecFi)
-  }
+
+
   // {
   //   title: "",
   //   des: "",
   //   price: "",
   //   time: ""
   // },
-  const manicureLists = [
-    {
-      title: "Quickie Manicure",
-      des: "A no-nonsense shape and polish",
-      price: "18",
-      time: "30"
-    },
-    {
-      title: "Signature Manicure",
-      des: "Our classic service includes nail shaping, cuticle care and a massage. Finish off with a fresh coat of polish.",
-      price: "35",
-      time: "60"
-    },
-    {
-      title: "Polished + Zen Manicure",
-      des: "Our all-new “Polished + Zen” service includes everything you love about our Signature service plus a heated eye mask treatment, followed by an aromatherapy pause with Innerfyre’s healing balms, as you recline in your chair, sip on calming chamomile tea and tune into a guided meditation video. It’s the perfect moment where you can get relaxed and be in your own zone.",
-      price: "45",
-      time: "70"
-    },
-    {
-      title: "Luxe Spa Manicure",
-      des: "The full works. Our luxe service includes nail shaping, cuticle care, gentle sea salt exfoliation, organic clay masque and a coconut oil massage. Finish off with a fresh coat of polish.",
-      price: "70",
-      time: "70"
-    },
-    {
-      title: "Gel Polish Soak Off (Manicure)",
-      des: "Safely remove your gel polish (not for Hard Gel or Nail Extensions)",
-      price: "20",
-      time: "20"
-    },
-    {
-      title: "Little Miss Quickie Manicure",
-      des: "A mini manicure service for the little ones, aged 12 years and below only. *Includes four nail stickers.",
-      price: "15",
-      time: "20"
-    },
-    {
-      title: "Gentlemans Manicure",
-      des: "Our classic service just for men, includes nail shaping, cuticle care and a massage. Finish off with a buff shine.",
-      price: "40",
-      time: "60"
-    },
-  ];
-  const pedicureLists = [
-    {
-      title: "Quickie Pedicure",
-      des: "A no-nonsense shape and polish",
-      price: "18",
-      time: "30"
-    },
-    {
-      title: "Signature Pedicure",
-      des: "Our classic service includes nail shaping, cuticle care, foot scrub and a massage. Finish off with a fresh coat of polish.",
-      price: "35",
-      time: "60"
-    },
-    {
-      title: "Polished + Zen Pedicure",
-      des: "Our all-new “Polished + Zen” service includes everything you love about our Signature service plus a heated eye mask treatment, followed by an aromatherapy pause with Innerfyre’s healing balms, as you recline in your chair, sip on calming chamomile tea and tune into a guided meditation video. It’s the perfect moment where you can get relaxed and be in your own zone.",
-      price: "55",
-      time: "70"
-    },
-    {
-      title: "Gel Polish Soak Off (Pedicure)",
-      des: "Safely remove your gel polish (not for Hard Gel or Nail Extensions)",
-      price: "70",
-      time: "70"
-    },
-    {
-      title: "Little Miss Quickie Pedicure",
-      des: "A mini pedicure service for the little ones, aged 12 years and below only. *Includes four nail stickers.",
-      price: "20",
-      time: "20"
-    },
-    {
-      title: "Luxe Spa Pedicure",
-      des: "The full works. Our luxe service includes nail shaping, cuticle care, gentle sea salt exfoliation, organic clay masque and a coconut oil massage. Finish off with a fresh coat of polish. Also includes callus & heel treatment (if needed).",
-      price: "15",
-      time: "20"
-    },
-    {
-      title: "Gentlemans Pedicure",
-      des: "Our classic service just for men, includes nail shaping, cuticle care, foot scrub and a massage. Finish off with a buff shine.",
-      price: "40",
-      time: "60"
-    },
-    {
-      title: "Callus & Heel Treatment",
-      des: "A highly-effective foot scrub and treatment to remove thick and stubborn calluses (Not suitable for use if you are pregnant, diabetic or have poor circulation due to any illness.)",
-      price: "40",
-      time: "60"
-    },
-  ];
+
+
+
+
   return (
     <>
-      <section >
+      <section className="py-10">
         <div className="flex flex-col items-start justify-start bg-primary p-5 gap-5 rounded-2xl container">
           <p>Location</p>
           <div className="w-full h-10 border-spacing-1 bg-white rounded-2xl"></div>
@@ -230,19 +107,23 @@ function App() {
             <div className="basis-1/2">
               {selectedOption == "2above" && (
                 <div className="flex flex-row items-center justify-center gap-5">
-                  <button onClick={DecrementFun} className="bg-primary text-2xl w-10 h-10 rounded-full hover:drop-shadow-lg hover:ring-2 hover:ring-primary hover:bg-white transition-all duration-300">-</button>
+                  <div className="w-10 h-10"><button onClick={DecrementFun} className="bg-primary text-2xl w-10 h-10 rounded-full hover:drop-shadow-lg hover:ring-2 hover:ring-primary hover:bg-white transition-all duration-300">-</button></div>
+
                   <p>{count}</p>
-                  {count == 4 ? (
-                    <></>
-                  ) : (
-                    <button onClick={IncrementFun}  className="bg-primary text-2xl w-10 h-10 rounded-full hover:drop-shadow-lg hover:ring-2 hover:ring-primary hover:bg-white transition-all duration-300">+</button>
-                  )}
+                  <div className="w-10 h-10">
+                    {count == 4 ? (
+                      <></>
+                    ) : (
+
+                      <button onClick={IncrementFun} className="bg-primary text-2xl w-10 h-10 rounded-full hover:drop-shadow-lg hover:ring-2 hover:ring-primary hover:bg-white transition-all duration-300">+</button>
+
+                    )}</div>
                 </div>
               )}
             </div>
           </div>
           {selectedOption == "2above" && (
-            <div className="  border-spacing-1 bg-[#fff]">
+            <div className="  border-spacing-1 bg-[#fff] rounded-2xl">
               <div className=" px-2 py-16 sm:px-0">
                 <Tab.Group>
                   <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
@@ -255,7 +136,7 @@ function App() {
                             "ring-[#D2AF86]/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2",
                             selected
                               ? "bg-white text-blue-700 shadow"
-                              : "text-blue-100 hover:bg-white/[0.12] hover:text-white"
+                              : "text-blue-100 hover:bg-white/[0.12] hover:text-gr"
                           )
                         }
                       >
@@ -273,10 +154,36 @@ function App() {
                         )}
                       >
                         <form>
-                          <ul>
-                            Lahiru Bada
+                          <ul class="flex flex-wrap items-start justify-start w-full">
+                            <li class="w-full md:w-1/3 flex flex-col items-start p-3 ">
+                              <label for="first_name">First Name:</label>
+                              <input type="text" id="first_name" name="first_name" required className="border-[1px] p-2 w-full"/>
+                            </li>
+                            <li class="w-full md:w-1/3 flex flex-col items-start p-3">
+                              <label for="last_name">Last Name:</label>
+                              <input type="text" id="last_name" name="last_name" required className="border-[1px] p-2 w-full"/>
+                            </li>
+                            <li class="w-full md:w-1/3 flex flex-col items-start p-3">
+                              <label for="email">Email:</label>
+                              <input type="email" id="email" name="email" required className="border-[1px] p-2 w-full"/>
+                            </li>
+                            <li class="w-full md:w-1/3 flex flex-col items-start p-3">
+                              <label for="date_of_birth">Date of Birth:</label>
+                              <input type="date" id="date_of_birth" name="date_of_birth" required className="border-[1px] p-2 w-full"/>
+                            </li>
+                            <li class="w-full md:w-1/3 flex flex-col items-start p-3">
+                              <label for="gender">Gender:</label>
+                              <select id="gender" name="gender" required className="border-[1px] p-2 w-full">
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                              </select>
+                            </li>
                           </ul>
+                         
                         </form>
+
                       </Tab.Panel>
                     ))}
                   </Tab.Panels>
@@ -307,212 +214,18 @@ function App() {
           </div>
           {/* Specials Section */}
           {specials &&
-            <div className="w-full flex flex-col items-center justify-start rounded-lg p-1 gap-2">
-              <div
-                className="w-full flex flex-col ring-2 rounded-lg ring-gr p-2 hover:bg-white transition-all duration-300"
-              >
-                <div className="w-full flex flex-row items-center justify-start ">
-                  <div className="w-20"><div className="cursor-pointer" onClick={secOne}>Top</div></div>
-                  <div className="w-5/6 flex flex-col items-start gap-3">
-                    <p className="font-bold">Signature Manicure & Pedicure Combo</p>
-                    <p className="font-light">Book in for a Signature Manicure & Signature Pedicure at the same time, and enjoy a combo price of $75. T&C's apply</p>
-                  </div>
-                  <div className="w-1/6 flex flex-col items-center justify-center">
-                    <p>75</p>
-                    <p>120</p>
-                  </div>
-                </div>
-                {showSpecilssecOne && <div
-                  className="text-left ml-16"
-                >
-                  This Package Includes:
-                  <li>Signature Manicure</li>
-                  <li>Signature Pedicure</li>
-                </div>}
-              </div>
-              <div
-                className="w-full flex flex-col ring-2 rounded-lg ring-gr p-2 hover:bg-white transition-all duration-300"
-              >
-                <div className="w-full flex flex-row items-center justify-start ">
-                  <div className="w-20"><div className="cursor-pointer" onClick={secTwo}>Top</div></div>
-                  <div className="w-5/6 flex flex-col items-start gap-3">
-                    <p>Luxe Spa Manicure & Pedicure Combo</p>
-                    <p>Book in for a Luxe Spa Manicure & Luxe Spa Pedicure at the same time, and enjoy a combo price of $150 . T&C's apply.</p>
-                  </div>
-                  <div className="w-1/6 flex flex-col items-center justify-center">
-                    <p>150</p>
-                    <p>165</p>
-                  </div>
-                </div>
-                {showSpecilssecTwo && <div
-                  className="text-left ml-16"
-                >
-                  This Package Includes:
-                  <li>Luxe Spa Manicure</li>
-                  <li>Luxe Spa Pedicure</li>
-                </div>}
-              </div>
-              <div
-                className="w-full flex flex-col ring-2 rounded-lg ring-gr p-2 hover:bg-white transition-all duration-300"
-              >
-                <div className="w-full flex flex-row items-center justify-start ">
-                  <div className="w-20"><div className="cursor-pointer" onClick={secTh}>Top</div></div>
-                  <div className="w-5/6 flex flex-col items-start gap-3">
-                    <p>Gentleman's Manicure & Pedicure Combo</p>
-                    <p>Book in for a Gentleman's Manicure & Signature Pedicure at the same time, and enjoy a combo price of $85 T&C's apply</p>
-                  </div>
-                  <div className="w-1/6 flex flex-col items-center justify-center">
-                    <p>85</p>
-                    <p>120</p>
-                  </div>
-                </div>
-                {showSpecilssecThr && <div
-                  className="text-left ml-16"
-                >
-                  This Package Includes:
-                  <li>Gentlemans Manicure</li>
-                  <li>Gentlemans Pedicure</li>
-                </div>}
-              </div>
-              <div
-                className="w-full flex flex-col ring-2 rounded-lg ring-gr p-2 hover:bg-white transition-all duration-300"
-              >
-                <div className="w-full flex flex-row items-center justify-start ">
-                  <div className="w-20"><div className="cursor-pointer" onClick={secFo}>Top</div></div>
-                  <div className="w-5/6 flex flex-col items-start gap-3">
-                    <p>SPArty Package for 5 pax</p>
-                    <p>This package is for a group of 5 and it includes our Luxe Spa Combo for that special person and our Signature Combo for 4 guests plus drinks and snacks. Perfect for birthday parties, bridal and baby showers and other special occasions. Contact us to book!</p>
-                  </div>
-                  <div className="w-1/6 flex flex-col items-center justify-center">
-                    <p>495</p>
-                    <p>120</p>
-                  </div>
-                </div>
-                {showSpecilssecFo && <div
-                  className="text-left ml-16"
-                >
-                  This Package Includes:
-                  <li>Luxe Spa Manicure</li>
-                  <li>Luxe Spa Pedicure</li>
-                  <li>Signature Manicur</li>
-                  <li>Signature Pedicur</li>
-                </div>}
-              </div>
-              <div
-                className="w-full flex flex-col ring-2 rounded-lg ring-gr p-2 hover:bg-white transition-all duration-300 "
-              >
-                <div className="w-full flex flex-row items-center justify-start ">
-                  <div className="w-20"><div className="cursor-pointer" onClick={secFi}>Top</div></div>
-                  <div className="w-5/6 flex flex-col items-start gap-3">
-                    <p>Welcome Offer</p>
-                    <p>Enjoy 20% off your first visit! Select your preferred services and enter promo code “TNSFIRST” upon check-out. ✨ Strictly valid for base services and for first-time customers only. Not valid on combo prices and add-on services. Not valid on group bookings. Online bookings only. T&C’s apply.</p>
-                  </div>
-                  <div className="w-1/6 flex flex-col items-center justify-center">
-                    <p>0</p>
-                    <p>120</p>
-                  </div>
-                </div>
-                {showSpecilssecFi && <div
-                  className="text-left ml-16"
-                >
-                  This Package Includes:
-                  <li>Gentlemans Manicure</li>
-                  <li>Gentlemans Pedicure</li>
-                  <li>Luxe Spa Manicure</li>
-                  <li>Luxe Spa Pedicure</li>
-                  <li>Signature Manicure</li>
-                  <li>Signature Pedicure</li>
-                </div>}
-              </div>
-            </div>
+            <SpecialsTab />
           }
           {manicure &&
-            <div className="w-full flex flex-col items-center justify-start">
-              <div
-                className="w-full flex flex-col gap-2"
-              >
-                {manicureLists.map((manicureList, index) => (
-                  <div className="w-full flex flex-row items-center justify-start ring-2 rounded-lg ring-gr p-2 hover:bg-white transition-all duration-300 " key={index}>
-                    <div className="w-5/6 flex flex-col items-start gap-3">
-                      <p>{manicureList.title}</p>
-                      <p>{manicureList.des}</p>
-                    </div>
-                    <div className="w-1/6 flex flex-col items-center justify-center">
-                      <p>USD {manicureList.price}</p>
-                      <p>{manicureList.time}</p>
-                    </div>
-                    <div className="w-20">
-                      <input type="radio" name="manicureListValue" id="manicureListValue" onClick={() => setbuttonShow(!buttonShow)}/>
-                    </div>
-                  </div>
-                ))}
-
-
-              </div>
-            </div>
+            <ManicureTab />
           }
           {pedicure &&
-            <div className="w-full flex flex-col items-center justify-start">
-              <div
-                className="w-full flex flex-col gap-2"
-              >
-                {pedicureLists.map((pedicureList, index) => (
-                  <div className="w-full flex flex-row items-center justify-start ring-2 rounded-lg ring-gr p-2 hover:bg-white transition-all duration-300 hover:cursor-pointer" key={index}>
-                    <div className="w-5/6 flex flex-col items-start gap-3">
-                      <p>{pedicureList.title}</p>
-                      <p>{pedicureList.des}</p>
-                    </div>
-                    <div className="w-1/6 flex flex-col items-center justify-center">
-                      <p>USD {pedicureList.price}</p>
-                      <p>{pedicureList.time} Min</p>
-                    </div>
-                    <div className="w-20">
-                      <input type="radio" name="manicureListValue" id="manicureListValue"  onClick={() => setbuttonShow(!buttonShow)}/>
-                    </div>
-                  </div>
-                ))}
-
-
-              </div>
-            </div>
+            <PedicureTab />
           }
           {massage &&
-            <div className="w-full flex flex-col items-center justify-start">
-              <div
-                className="w-full flex flex-col ring-2 rounded-lg ring-gr p-2 hover:bg-white transition-all duration-300 hover:cursor-pointer"
-              >
-
-                <div className="w-full flex flex-row items-center justify-start " >
-                  <div className="w-5/6 flex flex-col items-start gap-3">
-                    <p>30-min Foot Massage</p>
-                    <p>Soothe tired feet with a warm foot soak, gentle exfoliation and an invigorating foot and calf massage using organic coconut oil and essential oils.</p>
-                  </div>
-                  <div className="w-1/6 flex flex-col items-center justify-center">
-                    <p>USD 45</p>
-                    <p>30 Min</p>
-                  </div>
-                  <div className="w-20">
-                    <input type="radio" name="manicureListValue" id="manicureListValue" onClick={() => setbuttonShow(!buttonShow)}/>
-                  </div>
-                </div>
-
-
-
-              </div>
-            </div>
+            <MassageTab />
           }
-          {
-            buttonShow && (
-              <>
-                <div className="w-full flex flex-row items-center justify-center">
-                  <button type="button" className="bg-[#fff] px-5 py-2 rounded-md">Save and Continue</button>
-                </div>
-                <div className="w-full flex flex-row items-end justify-end">
-                  <button type="button " className="bg-[#fff] px-5 py-2 rounded-md">Add Another Service</button>
-                </div>
-              </>
-            )
-          }
+
 
         </div>
       </section>
