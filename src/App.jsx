@@ -13,14 +13,10 @@ import MassageTab from "./MassageTab";
 function App() {
   const [count, setCount] = useState(2);
   const [selectedOption, setSelectedOption] = useState("just me");
-  const [specials, setspecials] = useState(true)
-  const [manicure, setmanicure] = useState(false)
-  const [pedicure, setpedicure] = useState(false)
-  const [massage, setmassage] = useState(false)
-
-
-
-
+  const [specials, setspecials] = useState(true);
+  const [manicure, setmanicure] = useState(false);
+  const [pedicure, setpedicure] = useState(false);
+  const [massage, setmassage] = useState(false);
 
   // Function to handle change in the select element
   const handleSelectChange = (event) => {
@@ -45,31 +41,29 @@ function App() {
   }
 
   function Specials() {
-    setspecials(true)
-    setmanicure(false)
-    setpedicure(false)
-    setmassage(false)
+    setspecials(true);
+    setmanicure(false);
+    setpedicure(false);
+    setmassage(false);
   }
   function Manicure() {
-    setspecials(false)
-    setmanicure(true)
-    setpedicure(false)
-    setmassage(false)
+    setspecials(false);
+    setmanicure(true);
+    setpedicure(false);
+    setmassage(false);
   }
   function Pedicure() {
-    setspecials(false)
-    setmanicure(false)
-    setpedicure(true)
-    setmassage(false)
+    setspecials(false);
+    setmanicure(false);
+    setpedicure(true);
+    setmassage(false);
   }
   function Massage() {
-    setspecials(false)
-    setmanicure(false)
-    setpedicure(false)
-    setmassage(true)
+    setspecials(false);
+    setmanicure(false);
+    setpedicure(false);
+    setmassage(true);
   }
-
-
 
   // {
   //   title: "",
@@ -78,17 +72,14 @@ function App() {
   //   time: ""
   // },
 
-
-
-
   return (
     <>
       <section className="py-10">
         <div className="flex flex-col items-start justify-start bg-primary p-5 gap-5 rounded-2xl container">
-          <p>Location</p>
-          <div className="w-full h-10 border-spacing-1 bg-white rounded-2xl"></div>
+          {/* <p>Location</p>
+          <div className="w-full h-10 border-spacing-1 bg-white rounded-2xl"></div> */}
 
-          <div className="w-full h-10 border-spacing-1 bg-white flex flex-row items-center justify-center gap-8 py-10 rounded-2xl">
+          {/* <div className="w-full h-10 border-spacing-1 bg-white flex flex-row items-center justify-center gap-8 py-10 rounded-2xl">
             <div className="basis-1/2">
               <label for="book-type" class="pr-5">
                 I would like to book an appointment for:
@@ -121,8 +112,8 @@ function App() {
                 </div>
               )}
             </div>
-          </div>
-          {selectedOption == "2above" && (
+          </div> */}
+          {/* {selectedOption == "2above" && (
             <div className="  border-spacing-1 bg-[#fff] rounded-2xl">
               <div className=" px-2 py-16 sm:px-0">
                 <Tab.Group>
@@ -190,43 +181,49 @@ function App() {
                 </Tab.Group>
               </div>
             </div>
-          )}
+          )} */}
           {/* services */}
           <div className="w-full flex flex-col items-center justify-start">
             <div className="w-full flex flex-row items-center justify-evenly gap-5">
               <div
-                className={`${specials ? "bg-white" : ""} w-1/4 h-14 cursor-pointer flex flex-col items-center justify-center ring-2 ring-white uppercase rounded-2xl`}
+                className={`${
+                  specials ? "bg-white" : ""
+                } w-1/4 h-14 cursor-pointer flex flex-col items-center justify-center ring-2 ring-white uppercase rounded-2xl`}
                 onClick={Specials}
-
               >
                 Specials
               </div>
-              <div className={`${manicure ? "bg-white" : ""} w-1/4 h-14 cursor-pointer flex flex-col items-center justify-center ring-2 ring-white uppercase rounded-2xl`} onClick={Manicure} >
-                Manicure
+              <div
+                className={`${
+                  manicure ? "bg-white" : ""
+                } w-1/4 h-14 cursor-pointer flex flex-col items-center justify-center ring-2 ring-white uppercase rounded-2xl`}
+                onClick={Manicure}
+              >
+                waxing
               </div>
-              <div className={`${pedicure ? "bg-white" : ""} w-1/4 h-14 cursor-pointer flex flex-col items-center justify-center ring-2 ring-white uppercase rounded-2xl`} onClick={Pedicure} >
+              <div
+                className={`${
+                  pedicure ? "bg-white" : ""
+                } w-1/4 h-14 cursor-pointer flex flex-col items-center justify-center ring-2 ring-white uppercase rounded-2xl`}
+                onClick={Pedicure}
+              >
                 Pedicure
               </div>
-              <div className={`${massage ? "bg-white" : ""} w-1/4 h-14 cursor-pointer flex flex-col items-center justify-center ring-2 ring-white uppercase rounded-2xl`} onClick={Massage} >
-                Massage
+              <div
+                className={`${
+                  massage ? "bg-white" : ""
+                } w-1/4 h-14 cursor-pointer flex flex-col items-center justify-center ring-2 ring-white uppercase rounded-2xl`}
+                onClick={Massage}
+              >
+                Manicures
               </div>
             </div>
           </div>
           {/* Specials Section */}
-          {specials &&
-            <SpecialsTab />
-          }
-          {manicure &&
-            <ManicureTab />
-          }
-          {pedicure &&
-            <PedicureTab />
-          }
-          {massage &&
-            <MassageTab />
-          }
-
-
+          {specials && <SpecialsTab />}
+          {manicure && <ManicureTab />}
+          {pedicure && <PedicureTab />}
+          {massage && <MassageTab />}
         </div>
       </section>
     </>

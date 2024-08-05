@@ -6,7 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import LoaderIcon from "react-loader-icon";
 import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
 
-function MassageTab() {
+function ColorChange() {
   const [buttonShow, setbuttonShow] = useState(false);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [selectedTime, setSelectedTime] = useState("");
@@ -20,41 +20,6 @@ function MassageTab() {
     setSelectedDate(date);
   };
 
-  const ManicuresLists = [
-    {
-      title: "Manicure with polish(Lycon/OPI Gel)",
-    },
-    {
-      title: "Manicure with polish(Lycon/OPI Nail polish)",
-    },
-    {
-      title: "Manicure with polish(Lycon/Non Gel)",
-    },
-    {
-      title: "Manicure with polish(Lycon/Non Nail Polish)",
-    },
-    {
-      title: "Manicure without Polish(Lycon)",
-    },
-    {
-      title: "Manicure without Polish(Non)",
-    },
-    {
-      title: "French colour with OPI Gel + Manicure",
-    },
-    {
-      title: "French colour with Non Gel + Manicure",
-    },
-    {
-      title: "French colour with OPI GEL",
-    },
-    {
-      title: "French colour with Non Gel",
-    },
-    {
-      title: "Cutn file",
-    },
-  ];
 
   const ColorChangeLists = [
     {
@@ -81,43 +46,11 @@ function MassageTab() {
     {
       title: "Non Nail Polish",
     },
+   
   ];
-  const SoakOffTabLists = [
-    {
-      title: "Gel Colour",
-    },
-    {
-      title: "Nail Polish",
-    },
-    {
-      title: "Dipping",
-    },
-    {
-      title: "Gel/Acrylic",
-    },
-  ];
-  const LyconManicuresLists = [
-    {
-      title: "Dipping powder",
-    },
-    {
-      title: "French dipping",
-    },
-    {
-      title: "Omber dipping",
-    },
-  ];
-  const NonManicuresLists = [
-    {
-      title: "Dipping powder",
-    },
-    {
-      title: "French dipping",
-    },
-    {
-      title: "Omber dipping",
-    },
-  ];
+
+
+
   async function handleSubmit(event) {
     event.preventDefault();
     if (
@@ -165,28 +98,7 @@ function MassageTab() {
     <>
       <div className="w-full flex flex-col items-center justify-start">
         <div className="w-full flex flex-col gap-2">
-          {ManicuresLists.map((pedicureList, index) => (
-            <div
-              className="w-full flex flex-row items-center justify-between ring-2 rounded-lg ring-gr p-2 hover:bg-white transition-all duration-300 hover:cursor-pointer"
-              key={index}
-            >
-              <div className="w-5/6 flex flex-col items-start gap-3">
-                <p>{pedicureList.title}</p>
-              </div>
-
-              <input
-                type="radio"
-                name="pedicureService"
-                value={pedicureList.title}
-                className="w-5 h-5"
-                onClick={() => {
-                  setbuttonShow(true);
-                  setSelectedService(pedicureList.title);
-                }}
-              />
-            </div>
-          ))}
-          Color Change
+          
           {ColorChangeLists.map((pedicureList, index) => (
             <div
               className="w-full flex flex-row items-center justify-between ring-2 rounded-lg ring-gr p-2 hover:bg-white transition-all duration-300 hover:cursor-pointer"
@@ -208,72 +120,7 @@ function MassageTab() {
               />
             </div>
           ))}
-          Soak off
-          {SoakOffTabLists.map((pedicureList, index) => (
-            <div
-              className="w-full flex flex-row items-center justify-between ring-2 rounded-lg ring-gr p-2 hover:bg-white transition-all duration-300 hover:cursor-pointer"
-              key={index}
-            >
-              <div className="w-5/6 flex flex-col items-start gap-3">
-                <p>{pedicureList.title}</p>
-              </div>
-
-              <input
-                type="radio"
-                name="pedicureService"
-                value={pedicureList.title}
-                className="w-5 h-5"
-                onClick={() => {
-                  setbuttonShow(true);
-                  setSelectedService(pedicureList.title);
-                }}
-              />
-            </div>
-          ))}
-          Dipping powder on tips-Including manicure(Lycon)
-          {LyconManicuresLists.map((pedicureList, index) => (
-            <div
-              className="w-full flex flex-row items-center justify-between ring-2 rounded-lg ring-gr p-2 hover:bg-white transition-all duration-300 hover:cursor-pointer"
-              key={index}
-            >
-              <div className="w-5/6 flex flex-col items-start gap-3">
-                <p>{pedicureList.title}</p>
-              </div>
-
-              <input
-                type="radio"
-                name="pedicureService"
-                value={pedicureList.title}
-                className="w-5 h-5"
-                onClick={() => {
-                  setbuttonShow(true);
-                  setSelectedService(pedicureList.title);
-                }}
-              />
-            </div>
-          ))}
-          Dipping powder on tips-Including manicure(Non)
-          {NonManicuresLists.map((pedicureList, index) => (
-            <div
-              className="w-full flex flex-row items-center justify-between ring-2 rounded-lg ring-gr p-2 hover:bg-white transition-all duration-300 hover:cursor-pointer"
-              key={index}
-            >
-              <div className="w-5/6 flex flex-col items-start gap-3">
-                <p>{pedicureList.title}</p>
-              </div>
-
-              <input
-                type="radio"
-                name="pedicureService"
-                value={pedicureList.title}
-                className="w-5 h-5"
-                onClick={() => {
-                  setbuttonShow(true);
-                  setSelectedService(pedicureList.title);
-                }}
-              />
-            </div>
-          ))}
+          
           {buttonShow && (
             <>
               <form
@@ -379,4 +226,4 @@ function MassageTab() {
   );
 }
 
-export default MassageTab;
+export default ColorChange;
